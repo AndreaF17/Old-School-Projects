@@ -1,0 +1,78 @@
+Una palestra può ospitare al massimo 40 clienti. Esistono due tipologie di
+cliente:
+- regular
+- premium
+Un cliente premium può essere ammesso alla palestra solo se c’è almeno un
+posto libero.
+Un cliente regular può essere ammesso alla palestra solo se sono
+verificate entrambe le seguenti due condizioni:
+- c’è almeno un posto libero;
+- la palestra ha meno di 20 posti occupati, altrimenti, se la palestra ha
+già almeno 20 posti occupati, allora almeno la metà dei posti occupati deve 
+essere occupata da clienti premium.
+Programmare l’ingresso e l’uscita dalla palestra per entrambi i tipi di
+processo cliente, nel rispetto di quanto segue:
+- Se un cliente non può entrare, va messo in attesa.
+- Non può capitare che un cliente sia in attesa e il suo eventuale
+ingresso non violerebbe le regole sopra precisate.
+Non è necessario programmare il comportamento dei clienti all’interno
+della palestra.
+
+
+// Semafori
+mutex = 1;
+semStand = 1;
+semPrem = 1;
+
+// Variabili
+slotBusy = 0;
+countPremium = 0;
+
+Regular_Enter(){
+    wait(semStand);
+    wait(mutex);
+    if(slotBusy < 40 && (slotBusy<20 || countPremium > 20 )){
+        slotBusy++;
+        countStandard++;
+        if(slotBusy <20){
+            signal(semStand);
+        }
+    }
+    signal(mutex);
+}
+
+Regular_Exit(){
+    wait(mutex);
+        slotBusy--;
+        countStandard--;
+        if(slotBusy<20 || countPremium > 20){
+            signal(semStand);
+        }
+    signal(mutex);
+}
+
+Premium_Enter(){
+    wait(semPrem);
+    wait(mutex);
+    if(slotBusy < 40){
+        slotBusy++;
+        countStandard++;
+        if(slotBusy<39){
+            signal(semPrem);
+        }
+    }
+    signal(mutex);
+}
+
+Premium_Exit(){
+    wait(mutex);
+        slotBusy--;
+        countStandard--;
+        if(slotBusy<40){
+            signal(semPerm);
+            if(countPremium>20){
+                signal(semStand);
+            }
+        }
+    signal(mutex);
+}

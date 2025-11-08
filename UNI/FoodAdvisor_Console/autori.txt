@@ -1,0 +1,4 @@
+Ferrario Andrea <numero_matricola> Varese
+Giubilei Ivan <numero_matricola> Varese
+Loschiavo Christian <numero_matricola> Varese
+Rossi Nicolò <numero_matricola> Varese

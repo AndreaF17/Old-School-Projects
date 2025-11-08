@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#EEE"
+    android:paddingBottom="50dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ricette"
+        android:textAlignment="center"
+        android:textColor="@color/browser_actions_text_color"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/searchLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintBottom_toTopOf="@id/recipeItemsListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_border_edittext"
+            android:ems="10"
+            android:hint="Cerca"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="20dp"
+            android:textColorHighlight="@color/redOrangeLight"
+            android:textColorLink="@color/redOrange"
+            android:theme="@style/EditTextTheme"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_button"
+            app:icon="@drawable/ic_round_search_24"
+            app:iconPadding="0dp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/recipeItemsListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#000"
+        android:backgroundTint="#EEE"
+        android:clipToPadding="false"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="25sp"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
+        android:paddingHorizontal="15dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchLayout">
+
+    </ListView>
+</androidx.constraintlayout.widget.ConstraintLayout>

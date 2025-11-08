@@ -1,0 +1,94 @@
+// Semaforo
+
+semCons = 0;
+semProd = 1;
+semCPS  = 0;
+
+// Variabili
+
+i = 0;
+j = 0;
+k = 0;
+A = 0;
+Bonus = 5;
+
+
+// Buffer inizializzato -1
+
+
+// Produttore
+....
+int item;
+while(true) {
+    wait(semProd);
+    wait(semCons);
+    wait(semCPS);
+    if(A <= 100) {
+        item = ...;
+        
+        while(buffer[i] != -1) {
+            i = i + 1 % 100;
+        }
+        buffer[i] = item;
+        A++;
+    }
+    signal(semCons);
+    signal(semProd);
+    signal(semCPS);
+}
+
+// Consumatore
+
+....
+int item;
+while(true) {
+    wait(semCons);
+    wait(semProd);
+    wait(semCPS);
+    if(bonus > 0) {
+        if(A>0) {
+            while(buffer[k] == -1) {
+                k = k + 1 % 100;
+            }
+            item = buffer[k];
+            buffer[k] = -1;
+            A--;
+        }
+        signal(semCons);
+    }
+    signal(semProd);
+    signal(semCPS);
+}
+
+// Consumatore Speciale;
+
+....
+int item;
+
+while(true) {
+    wait(semCons);
+    wait(semProd);
+    wait(semCPS);
+    if(A > 1) {
+        while(buffer[j] == -1) {
+                j = j + 1 % 100;
+            }
+            item = buffer[j];
+            buffer[j] = -1;
+            A--;
+        }
+         while(buffer[j] == -1) {
+                j = j + 1 % 100;
+            }
+            item = buffer[j];
+            buffer[j] = -1;
+            A--;
+        }
+        if(bonus == 0){ 
+            bouns = 5
+            signal(semCons);
+        }
+    }
+    signal(semProd);
+    signal(semCPS);
+}

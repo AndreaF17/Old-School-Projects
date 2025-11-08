@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unidevteam.controllers.FXMLController">
+   <children>
+      <ImageView fitHeight="77.0" fitWidth="76.0" layoutX="531.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@primula.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="621.0" layoutY="47.0" prefHeight="37.0" prefWidth="117.0" text="Centro" textFill="#e3381e">
+         <font>
+            <Font name="Montserrat Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="621.0" layoutY="65.0" prefHeight="39.0" prefWidth="170.0" text="Vaccinale" textFill="#089050">
+         <font>
+            <Font name="Montserrat Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="621.0" layoutY="86.0" prefHeight="37.0" prefWidth="155.0" text="Cittadini" textFill="#75b85b">
+         <font>
+            <Font name="Montserrat Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="371.0" layoutY="143.0" prefHeight="3.0" prefWidth="579.0" />
+      <Label alignment="CENTER" layoutX="371.0" layoutY="156.0" prefHeight="35.0" prefWidth="579.0" text="Accesso" textAlignment="CENTER">
+         <font>
+            <Font name="Montserrat Regular" size="30.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="263.0" layoutY="202.0" prefHeight="50.0" prefWidth="795.0" text="Benvenuto! come desideri accedere?" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="accediButton" layoutX="337.0" layoutY="257.0" onMousePressed="#onClickAccessoCittadino" prefHeight="321.0" prefWidth="300.0" style="-fx-border-color: #ddd; -fx-border-radius: 10;">
+         <children>
+            <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="112.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@accesso.png" />
+               </image>
+            </ImageView>
+            <Label alignment="TOP_CENTER" layoutX="23.0" layoutY="196.0" prefHeight="77.0" prefWidth="254.0" text="Ho già un account esistente edesidero accederci" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Montserrat Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="42.0" layoutY="148.0" prefHeight="37.0" prefWidth="216.0" text="Accedi" textAlignment="CENTER">
+               <font>
+                  <Font name="Montserrat Regular" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="registratiButton" layoutX="684.0" layoutY="257.0" onMousePressed="#onClickRegistraCittadino" prefHeight="321.0" prefWidth="300.0" style="-fx-border-color: #ddd; -fx-border-radius: 10;">
+         <children>
+            <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="103.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@registrazione.png" />
+               </image>
+            </ImageView>
+            <Label alignment="TOP_CENTER" layoutX="23.0" layoutY="192.0" prefHeight="115.0" prefWidth="254.0" text="Non ho ancora un account e desidero registrarne uno nuovo utilizzando il codice vaccinazione che mi è stato fornito al momento della vaccinazione" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Montserrat Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="42.0" layoutY="146.0" prefHeight="37.0" prefWidth="216.0" text="Registrati" textAlignment="CENTER">
+               <font>
+                  <Font name="Montserrat Regular" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="ospiteButton" alignment="TOP_CENTER" layoutX="483.0" layoutY="599.0" onMousePressed="#onClickAccessoOspite" prefHeight="29.0" prefWidth="355.0" text="Desidero proseguire soltanto come ospite" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

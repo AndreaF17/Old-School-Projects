@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Cooking App</string>
+    <string name="login_title" translatable="false">Accesso</string>
+    <string name="login_button">Accedi</string>
+    <string name="register_button">Sign Up</string>
+    <string name="guest_text">Prosegui come ospite</string>
+    <string name="register_link">Non hai un account? Registrati</string>
+    <string name="login_link">Do you have already an account? Sign in.</string>
+    <string name="register_title">Registration</string>
+
+
+    // Facebook Login
+    <string name="facebook_app_id">285084103195286</string>
+    <string name="fb_login_protocol_scheme">fb285084103195286</string>
+    <string name="image_profile_picture">Image profile picture</string>
+    <string name="profile_id">Profile Id:</string>
+    <string name="display_name">Display Name:</string>
+    <string name="email">Email:</string>
+    <string name="is_verified">Is Verified:</string>
+    <string name="logout">Esci</string>
+    <string name="disable_user">Disable User</string>
+    <string name="delete_user">Delete User</string>
+    <string name="email_hint">Inserisci la tua email</string>
+    <string name="email_label">Email</string>
+    <string name="password_hint">Inserisci la tua password</string>
+    <string name="password_label">Password</string>
+    <string name="recover_password">Recupera la tua password</string>
+    <string name="logo_description">Logo di Cooking App</string>
+    <string name="registrazione">Registrazione</string>
+    <string name="nome_completo">Nome completo</string>
+    <string name="inserisci_il_tuo_nome_e_cognome">Inserisci il tuo nome e cognome</string>
+    <string name="avanti">Avanti</string>
+    <string name="hai_gi_un_account_accedi">Hai già un account? Accedi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirm_password_label">Conferma password</string>
+    <string name="signup_button">Registrati</string>
+    <string name="lb_photo_url">Photo URL:</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="username_placeholder">Nome Utente</string>
+    <string name="placeholder_occupation">Utente</string>
+    <string name="bio_title">Biografia</string>
+    <string name="bio_placeholder">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</string>
+    <string name="recipes_title">Ricette</string>
+    <string name="contact_title">Contatti</string>
+    <string name="recipe_title_text">Titolo ricetta</string>
+    <string name="recipe_input_text">Inserisci il titolo della ricetta</string>
+    <string name="image_recipe_cover">Recipe Cover Image</string>
+    <string name="add_recipe_text">Aggiungi ricetta</string>
+    <string name="ingredients_text">Ingredienti</string>
+
+</resources>

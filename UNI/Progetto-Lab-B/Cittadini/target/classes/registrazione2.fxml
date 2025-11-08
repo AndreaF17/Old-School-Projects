@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unidevteam.controllers.FXMLRegistrazioneController2">
+   <children>
+      <ImageView fitHeight="50.0" fitWidth="51.0" layoutX="563.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@primula.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="620.0" layoutY="64.0" prefHeight="37.0" prefWidth="68.0" text="Centro" textFill="#e3381e">
+         <font>
+            <Font name="Montserrat Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="620.0" layoutY="82.0" prefHeight="39.0" prefWidth="95.0" text="Vaccinale" textFill="#089050">
+         <font>
+            <Font name="Montserrat Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="620.0" layoutY="103.0" prefHeight="37.0" prefWidth="95.0" text="Cittadini" textFill="#75b85b">
+         <font>
+            <Font name="Montserrat Bold" size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutX="357.0" layoutY="156.0" prefHeight="3.0" prefWidth="579.0" />
+      <Label alignment="CENTER" layoutX="357.0" layoutY="186.0" prefHeight="35.0" prefWidth="579.0" text="Registrazione 2/2" textAlignment="CENTER">
+         <font>
+            <Font name="Montserrat Regular" size="30.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="328.0" layoutY="229.0" prefHeight="50.0" prefWidth="624.0" text="Compila i campi con i dati richiesti per registrare un nuovo account e quindi usufruire di tutte le funzionalità disponibili" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="goBackButton" fitHeight="24.0" fitWidth="24.0" layoutX="377.0" layoutY="90.0" onMousePressed="#onClickGoBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@arrow-left-solid.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="registraCittadinoButton" layoutX="447.0" layoutY="517.0" mnemonicParsing="false" onAction="#onClickRegistraCittadino" prefHeight="35.0" prefWidth="400.0" style="-fx-background-color: #75B85B; -fx-color: white; -fx-text-fill: #FFF; -fx-border-radius: 5px;" text="Registrati">
+         <font>
+            <Font name="Montserrat Regular" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorMessage" alignment="TOP_CENTER" layoutX="283.0" layoutY="654.0" prefHeight="24.0" prefWidth="795.0" text="Messaggio di errore" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="447.0" layoutY="372.0" prefHeight="23.0" prefWidth="234.0" text="Password" textAlignment="CENTER">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idVaccinazioneTextField" layoutX="447.0" layoutY="331.0" prefHeight="31.0" prefWidth="400.0" promptText="Inserisci l'ID vaccinazione" style="-fx-appearence: none; -fx-background-color: #fff; -fx-border-color: #ddd; -fx-border-radius: 3;">
+         <font>
+            <Font name="Montserrat Regular" size="15.0" />
+         </font>
+      </TextField>
+      <Label alignment="TOP_LEFT" layoutX="447.0" layoutY="307.0" prefHeight="23.0" prefWidth="234.0" text="ID Vaccinazione" textAlignment="CENTER">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordTextField" layoutX="447.0" layoutY="395.0" prefHeight="30.0" prefWidth="400.0" promptText="Inserisci la tua password" style="-fx-background-color: #fff; -fx-border-color: #ddd; -fx-border-radius: 3;">
+         <font>
+            <Font name="Montserrat Regular" size="15.0" />
+         </font>
+      </PasswordField>
+      <Label alignment="TOP_LEFT" layoutX="447.0" layoutY="439.0" prefHeight="23.0" prefWidth="234.0" text="Conferma password" textAlignment="CENTER">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="confermaPasswordTextField" layoutX="447.0" layoutY="462.0" prefHeight="30.0" prefWidth="400.0" promptText="Inserisci la tua password" style="-fx-background-color: #fff; -fx-border-color: #ddd; -fx-border-radius: 3;">
+         <font>
+            <Font name="Montserrat Regular" size="15.0" />
+         </font>
+      </PasswordField>
+      <Label fx:id="errorMessage1" alignment="TOP_CENTER" layoutX="243.0" layoutY="583.0" prefHeight="73.0" prefWidth="795.0" text="PROVA" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

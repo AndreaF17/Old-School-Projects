@@ -1,0 +1,79 @@
+
+buffer[100];
+
+// Semafori
+
+emptyP = 50;
+emptyD = 33;
+empty3 = 17;
+
+mutexP = 1;
+mutexD = 1;
+mutex3 = 1;
+
+// Contatori
+
+int i = 0;
+int j = 3;
+int k = 1;
+int full = 0;
+
+
+// Produttore:
+
+while(true) {
+    .....
+
+    item = ...;
+
+    if(item % 2 == 0) {
+        wait(mutexP);
+        wait(emptyP);
+        buffer[i] = item;
+        i = (i % 2) % 100;
+        signal(mutexP);
+    } else if(item % 3 == 0) {
+        wait(mutex3);
+        wait(empty3);
+        buffer[j] = item;
+        if (j == 99) {j = 3} else {j =+ 6;}
+        signal(mutex3);
+    } else {
+        wait(mutexD);
+        wait(emptyD);
+        buffer[k];
+        while(k % 2 == 0 || k % 3 == 0) {
+            k = (k + 1) % 100;
+        }
+        signal(mutexD);
+    }
+
+    signal(full);
+}
+
+// Consumatore:
+
+while(true) {
+    wait(full);
+    wait(mutexP);
+    wait(mutexD);
+    wait(mutex3);
+    while(buffer[h] < 0) {
+        h++;
+    }
+    item = buffer [h];
+    buffer[h] = -1;
+    h = h + 1 % 100;
+    if(item % 2 == 0) {
+        signal(emptyP);
+    }
+    if(item % 2 != 0 && item % 3 == 0) {
+        signal(empty3);
+    }
+    if(item % 2 != 0 && item % 3 != 0) {
+        signal(emptyD);
+    }
+    signal(mutexD);
+    signal(mutex3);
+    signal(mutexP);
+}

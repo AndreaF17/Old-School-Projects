@@ -1,0 +1,82 @@
+// Semafori
+mutex = 1;
+
+// Variabili
+freeSlots 50;
+priorityV1 = false;
+priorityV2 = false;
+priorityV3 = false;
+
+Entering_V1(){
+    wait(mutex);
+    if(priorityV2 != true && priorityV3 != true){
+        if(freeSlots > 0){
+            freeSlots = freeSlots - 1;
+        }
+    }
+    signal(mutex);
+}
+
+Exiting_V1(){
+    wait(mutex);
+    if(freeSlots <= 50){
+        freeSlots += 1;
+        if(freeSlots == 1){ priorityV1 = true; }
+        if(freeSlots > 1) {
+            priorityV1 = false;
+            priorityV2 = false;
+            priorityV3 = false;
+        }
+    }
+    signal(mutex);
+}
+
+Entering_V2(){
+    wait(mutex);
+    if(priorityV3 != true && priorityV1 != true){
+        if(freeSlots > 1){ 
+            freeSlots = freeSlots- 2;
+        }
+    }
+    signal(mutex);
+}
+
+Exiting_V2(){
+    wait(mutex);
+    if(freeSlots<=50){
+        freeSlots += 2;
+        if(freeSlots == 2) { priorityV2 = true; }
+        if(freeSlots > 2) {
+            priorityV1 = false;
+            priorityV2 = false;
+            priorityV3 = false;
+        }
+    }
+    signal(mutex);
+}
+
+Entering_V3(){
+    wait(mutex);
+    if(priorityV1 != true && priorityV2 =! true){
+
+        if(freeSlots>2){
+            freeSlots -= 3;
+        }
+    }
+    signal(mutex);
+    
+}
+
+Exiting_V3(){
+    wait(mutex);
+    if(freeSlots<=50){
+        freeSlots += 3;
+        if(freeSlots == 3) { priorityV3 = true; }
+        if(freeSlots > 3) {
+            priorityV1 = false;
+            priorityV2 = false;
+            priorityV3 = false;
+        }
+    }
+    signal(mutex);
+}

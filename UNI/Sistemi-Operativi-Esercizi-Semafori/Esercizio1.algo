@@ -1,0 +1,70 @@
+Una biblioteca può ospitare al massimo 60 utenti, che sono classificati come utenti senior oppure utenti junior. Programmare ingresso ed uscita dalla biblioteca dei thread “utenti senior” e “utenti junior”.
+E’ necessario rispettare i seguenti vincoli:
+
+a. Se i 60 posti sono esauriti, nessun utente può accedere alla biblioteca.
+
+b. Anche nel caso i 60 posti non siano esauriti, 
+    gli utenti junior non possono entrare se nella biblioteca sono gia’ presenti almeno 12 utenti di tipo junior e gli utenti di tipo junior sono più numerosi degli utenti di tipo senior.
+
+c. L’utente che desidera accedere alla biblioteca ma non può farlo (a causa dei vincoli “a” e “b”) deve essere messo in attesa.
+
+d. Non devono esserci utenti in attesa di accedere alla biblioteca senza ragione.
+
+
+// Semafori
+mutex = 1;
+semPosti = 60;
+
+// Variabili
+
+numeroSenior = 0;
+numeroJunior = 0;
+
+
+UtentiSenior(){
+    // Entrata ....
+        wait(semPosti);
+        wait(mutex);
+        
+        postiOccupati++;
+        numeroSenior++;
+        signal(mutex);
+
+        .........
+        // Operazione all'interno della libreria
+        .........
+    
+    // Uscita ....
+    wait(mutex);
+    numeroSenior--;
+    signal(mutex);
+    signal(semPosti);
+}
+
+
+UtentiJunior(){
+    wait(mutex);
+    if(numeroJunior < 12 && numeroJunior < numeroSenior){
+        // Entrata ....
+        wait(semPosti);
+        numeroJunior++;
+        signal(mutex);
+
+        .........
+        // Operazione all'interno della libreria
+        .........
+
+        // Uscita .....
+        wait(mutex);
+        numeroJunior--;
+        signal(mutex);
+        signal(semPosti);
+    }
+    signal(mutex);
+}
+
+
+
+
+
+
